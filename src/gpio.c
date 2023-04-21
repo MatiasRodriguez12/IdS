@@ -5,15 +5,15 @@
 #define GPIO_COUNT 6
 #endif
 
-struct gpio_s{
-		uint8_t port;
-		uint8_t pin;
-		bool output;
-		bool alocated;	
-	};
-
+struct gpio_s {
+	uint8_t port;
+	uint8_t pin;
+	bool output;
+	bool alocated;	
+};
 
 gpio_t gpioAllocate(void){
+
 	static struct gpio_s instances[GPIO_COUNT] = {0};
 	gpio_t result = NULL;
 	
@@ -22,10 +22,10 @@ gpio_t gpioAllocate(void){
 			result= &instances[indice];
 			result->alocated=true;
 			break;
-			}
 		}
-		return result;
 	}
+	return result;
+}
 
 gpio_t gpioCreate(uint8_t port, uint8_t pin, bool output){
 	
@@ -39,15 +39,17 @@ gpio_t gpioCreate(uint8_t port, uint8_t pin, bool output){
 		result->port = port;
 		result->pin = pin;
 		result->output=output;
-		}
-	return result;
 	}
+	
+	return result;
+}
 
 bool gpioGetValue(gpio_t output){
-	}
+	/*...*/
+}
 
 void gpioSetValue(gpio_t output,bool value){
 	if (output->output){
-		//algo
-		}
+		/*...*/
 	}
+}

@@ -9,10 +9,10 @@ int main(void){
 	while(true){
 		if(gpioGetValue(tecla)==0){
 			gpioSetValue(led_rojo, true);
-			}
+		}
 		else{
 			gpioSetValue(led_rojo, false);
-			}
 		}
-	return 0;
 	}
+	return 0;
+}
